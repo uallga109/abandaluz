@@ -497,42 +497,32 @@ const CATEGORY_NAMES = {
   postres_caseros: "Postres Caseros"
 };
 
-// Íconos SVG personalizados para cada categoría
-const CATEGORY_ICONS = {
-  tapas: `<svg viewBox="0 0 512 512" fill="currentColor"><path d="M416 384c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H96C60.7 64 32 92.7 32 128v192c0 35.3 28.7 64 64 64h320zm-240-96c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm160 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>`,
-  kebab_pitas: `<svg viewBox="0 0 512 512" fill="currentColor"><path d="M375.7 19.7c-10.8-11.3-28.7-11.3-39.5 0L242.2 118c-26.6-6-54.7 1.9-74.8 22-26.3 26.3-31 66.8-14.2 97.9L33.7 357.4C12.1 379 0 408.3 0 439c0 39.4 17.3 76.5 47.5 101.8 3.8 3.2 8.7 5.2 13.9 5.2H384c53 0 96-43 96-96V128c0-43-28.5-81.2-69-93.7L375.7 19.7zm-143 148c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l113.1 113.1c7.8 7.8 7.8 20.5 0 28.3s-20.5 7.8-28.3 0L232.7 167.7z"/></svg>`,
-  tacos_franceses: `<svg viewBox="0 0 512 512" fill="currentColor"><path d="M464 256c0-114.9-93.1-208-208-208S48 141.1 48 256s93.1 208 208 208 208-93.1 208-208zm-208 80c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"/></svg>`,
-  menu_kebab_pizza_turca: `<svg viewBox="0 0 512 512" fill="currentColor"><path d="M464 96h-80V32c0-17.7-14.3-32-32-32H160c-17.7 0-32 14.3-32 32v64H48c-26.5 0-48 21.5-48 48v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48zm-144 0H192V64h128v32z"/></svg>`,
-  platos: `<svg viewBox="0 0 512 512" fill="currentColor"><path d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32zm0 384c-88.4 0-160-71.6-160-160S167.6 96 256 96s160 71.6 160 160-71.6 160-160 160z"/></svg>`,
-  la_brasa: `<svg viewBox="0 0 512 512" fill="currentColor"><path d="M363.5 120.7C378.1 92 376.1 57.5 358 32c-15-21.1-41.5-27-62.9-14-38.3 23.3-64 64.9-67 110.7-3-45.8-28.7-87.4-67-110.7-21.4-13-47.9-7.1-62.9 14-18.1 25.5-20.1 60-5.5 88.7C107.5 149.3 128 190.2 128 234.7c0 70.3 57 127.3 128 127.3s128-57 128-127.3c0-44.5-20.5-85.4-34.5-114zM256 480c53 0 96-43 96-96H160c0 53 43 96 96 96z"/></svg>`,
-  menus: `<svg viewBox="0 0 512 512" fill="currentColor"><path d="M224 96c0-17.7-14.3-32-32-32H32C14.3 64 0 78.3 0 96v320c0 17.7 14.3 32 32 32h160c17.7 0 32-14.3 32-32V96zm256 0c0-17.7-14.3-32-32-32H288c-17.7 0-32 14.3-32 32v320c0 17.7 14.3 32 32 32h160c17.7 0 32-14.3 32-32V96z"/></svg>`,
-  ensaladas: `<svg viewBox="0 0 512 512" fill="currentColor"><path d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32zm50.6 156.4L239.5 256l67.1 67.6c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L216.9 278.6c-12.5-12.5-12.5-32.8 0-45.3l67.1-67.6c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.7z"/></svg>`,
-  pizzas: `<svg viewBox="0 0 512 512" fill="currentColor"><path d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32zm0 384c-88.4 0-160-71.6-160-160S167.6 96 256 96s160 71.6 160 160-71.6 160-160 160z"/></svg>`,
-  postres_caseros: `<svg viewBox="0 0 512 512" fill="currentColor"><path d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32zm90.4 263.6c-7.3 15.3-25.9 21.6-41.2 14.3L256 286.3l-49.2 23.6c-15.3 7.3-33.9 1-41.2-14.3s-1-33.9 14.3-41.2l49.2-23.6-49.2-23.6c-15.3-7.3-21.6-25.9-14.3-41.2s25.9-21.6 41.2-14.3l49.2 23.6 49.2-23.6c15.3-7.3 33.9-1 41.2 14.3s1 33.9-14.3 41.2L305.2 249l49.2 23.6c15.3 7.3 21.6 25.9 14.3 41.2z"/></svg>`
+// Fotos de portada de alta calidad para cada categoría
+const CATEGORY_IMAGES = {
+  tapas: "tapas.jpg",
+  kebab_pitas: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=400&q=80",
+  tacos_franceses: "tacofrances.jpg",
+  menu_kebab_pizza_turca: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=400&q=80", // Pizza turca / Lahmacun style
+  platos: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80",
+  la_brasa: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=400&q=80",
+  menus: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+  ensaladas: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80",
+  pizzas: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=400&q=80",
+  postres_caseros: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80"
 };
-
-// Configuración de Favoritos usando localStorage
-let favorites = JSON.parse(localStorage.getItem("ab_andaluz_favorites")) || [];
 
 // Referencias a elementos del DOM
 const welcomeScreen = document.getElementById("welcome-screen");
 const menuScreen = document.getElementById("menu-screen");
 const categoriesGrid = document.getElementById("categories-grid");
 const itemsContainer = document.getElementById("items-container");
-const searchInput = document.getElementById("search-input");
 const categoryTabs = document.getElementById("category-tabs");
 const backBtn = document.getElementById("back-btn");
-const tabHome = document.getElementById("tab-home");
-const tabSearch = document.getElementById("tab-search");
-const tabFavorites = document.getElementById("tab-favorites");
-const tabInfo = document.getElementById("tab-info");
 const infoModal = document.getElementById("info-modal");
 const closeModal = document.getElementById("close-modal");
 const headerTitle = document.getElementById("header-title");
-const searchBarContainer = document.getElementById("search-bar-container");
 
 let currentActiveCategory = null;
-let showingFavorites = false;
 
 // Inicialización de la Aplicación
 function init() {
@@ -542,7 +532,7 @@ function init() {
   checkUrlParams();
 }
 
-// Renderiza el Grid de Categorías en la pantalla de inicio
+// Renderiza el Grid de Categorías con imágenes de fondo en la pantalla de inicio
 function renderCategoriesGrid() {
   categoriesGrid.innerHTML = "";
   Object.keys(CATEGORY_NAMES).forEach(catKey => {
@@ -555,12 +545,14 @@ function renderCategoriesGrid() {
     // Obtenemos los ítems de esta categoría para contar cuántos hay
     const count = MENU_DATA.filter(item => item.category === catKey).length;
 
+    // Aplicar imagen de fondo con degradado para legibilidad del texto
+    card.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.85)), url('${CATEGORY_IMAGES[catKey]}')`;
+
     card.innerHTML = `
-      <div class="category-icon-wrapper">
-        ${CATEGORY_ICONS[catKey] || ""}
+      <div class="category-card-content">
+        <h3 class="category-card-title">${CATEGORY_NAMES[catKey]}</h3>
+        <span class="category-card-count">${count} variedades</span>
       </div>
-      <h3 class="category-card-title">${CATEGORY_NAMES[catKey]}</h3>
-      <span class="category-card-count">${count} variedades</span>
     `;
 
     card.addEventListener("click", () => {
@@ -598,42 +590,15 @@ function setupEventListeners() {
   // Botón de Volver
   backBtn.addEventListener("click", goBackToWelcome);
 
-  // Input de búsqueda
-  searchInput.addEventListener("input", (e) => {
-    const query = e.target.value.trim();
-    filterMenu(query);
-  });
+  // Botón de acción en la pantalla de inicio
+  const btnWelcomeInfo = document.getElementById("btn-welcome-info");
 
-  // Taps de barra inferior
-  tabHome.addEventListener("click", () => {
-    goBackToWelcome();
-  });
-
-  tabSearch.addEventListener("click", () => {
-    if (welcomeScreen.classList.contains("active")) {
-      openCategory("tapas"); // abre por defecto
-    }
-    showingFavorites = false;
-    tabFavorites.classList.remove("active");
-    tabHome.classList.remove("active");
-    tabSearch.classList.add("active");
-    
-    // Enfocar buscador
-    searchBarContainer.classList.add("highlight-search");
-    searchInput.focus();
-    setTimeout(() => {
-      searchBarContainer.classList.remove("highlight-search");
-    }, 1000);
-  });
-
-  tabFavorites.addEventListener("click", () => {
-    showFavoritesList();
-  });
-
-  tabInfo.addEventListener("click", () => {
-    infoModal.classList.add("active");
-    document.body.style.overflow = "hidden"; // Evita scroll
-  });
+  if (btnWelcomeInfo) {
+    btnWelcomeInfo.addEventListener("click", () => {
+      infoModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  }
 
   closeModal.addEventListener("click", () => {
     infoModal.classList.remove("active");
@@ -652,15 +617,10 @@ function setupEventListeners() {
 // Navegar a una categoría específica
 function openCategory(categoryKey) {
   currentActiveCategory = categoryKey;
-  showingFavorites = false;
 
   // Ajustar clases activas
   welcomeScreen.classList.remove("active");
   menuScreen.classList.add("active");
-
-  tabHome.classList.remove("active");
-  tabFavorites.classList.remove("active");
-  tabSearch.classList.remove("active");
 
   headerTitle.innerText = CATEGORY_NAMES[categoryKey];
 
@@ -674,9 +634,6 @@ function openCategory(categoryKey) {
     activeTab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
   }
 
-  // Limpiar buscador al cambiar de categoría
-  searchInput.value = "";
-
   // Renderizar ítems
   renderItems(MENU_DATA.filter(item => item.category === categoryKey));
   
@@ -689,12 +646,7 @@ function goBackToWelcome() {
   welcomeScreen.classList.add("active");
   menuScreen.classList.remove("active");
 
-  tabHome.classList.add("active");
-  tabFavorites.classList.remove("active");
-  tabSearch.classList.remove("active");
-
   currentActiveCategory = null;
-  showingFavorites = false;
 
   window.history.pushState({}, "", window.location.pathname);
 }
@@ -714,7 +666,6 @@ function renderItems(itemsList, customEmptyMessage = "No se encontraron platos."
   }
 
   itemsList.forEach((item, index) => {
-    const isFav = favorites.includes(item.id);
     const itemCard = document.createElement("div");
     itemCard.className = "item-card";
     itemCard.style.animationDelay = `${index * 0.05}s`;
@@ -775,11 +726,6 @@ function renderItems(itemsList, customEmptyMessage = "No se encontraron platos."
         <h4 class="item-title">
           <span class="item-num">${item.id}.</span> ${item.name}
         </h4>
-        <button class="fav-btn ${isFav ? 'active' : ''}" aria-label="Añadir a favoritos" data-id="${item.id}">
-          <svg class="heart-icon" viewBox="0 0 24 24">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-          </svg>
-        </button>
       </div>
       <p class="item-description">${item.description}</p>
       <div class="item-footer">
@@ -787,109 +733,8 @@ function renderItems(itemsList, customEmptyMessage = "No se encontraron platos."
       </div>
     `;
 
-    // Click handler para el botón de favorito
-    const favButton = itemCard.querySelector(".fav-btn");
-    favButton.addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleFavorite(item.id, favButton);
-    });
-
     itemsContainer.appendChild(itemCard);
   });
-}
-
-// Cambiar estado de favorito de un plato
-function toggleFavorite(itemId, buttonEl) {
-  const index = favorites.indexOf(itemId);
-  if (index > -1) {
-    favorites.splice(index, 1);
-    buttonEl.classList.remove("active");
-    showToast("Eliminado de Favoritos");
-  } else {
-    favorites.push(itemId);
-    buttonEl.classList.add("active");
-    showToast("Añadido a Favoritos");
-  }
-  localStorage.setItem("ab_andaluz_favorites", JSON.stringify(favorites));
-
-  // Si estamos en la pestaña de favoritos, re-renderizar para quitar el ítem al instante
-  if (showingFavorites) {
-    showFavoritesList();
-  }
-}
-
-// Muestra una lista filtrada por favoritos
-function showFavoritesList() {
-  showingFavorites = true;
-  currentActiveCategory = null;
-
-  welcomeScreen.classList.remove("active");
-  menuScreen.classList.add("active");
-
-  tabHome.classList.remove("active");
-  tabSearch.classList.remove("active");
-  tabFavorites.classList.add("active");
-
-  headerTitle.innerText = "Mis Favoritos";
-
-  // Desactivar todos los tabs de categorías superiores
-  document.querySelectorAll(".category-tab").forEach(tab => {
-    tab.classList.remove("active");
-  });
-
-  searchInput.value = "";
-
-  const favItems = MENU_DATA.filter(item => favorites.includes(item.id));
-  renderItems(favItems, "Aún no has añadido ningún plato a tus favoritos. ¡Toca el corazón en cualquier plato para guardarlo!");
-}
-
-// Filtra los platos en base a la barra de búsqueda
-function filterMenu(query) {
-  if (!query) {
-    // Si no hay query, volver al estado normal
-    if (showingFavorites) {
-      showFavoritesList();
-    } else if (currentActiveCategory) {
-      renderItems(MENU_DATA.filter(item => item.category === currentActiveCategory));
-    }
-    return;
-  }
-
-  const cleanQuery = query.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  
-  // Buscar en todos los platos si no estamos en una categoría, o en la categoría actual/favoritos
-  let baseList = MENU_DATA;
-  if (showingFavorites) {
-    baseList = MENU_DATA.filter(item => favorites.includes(item.id));
-  } else if (currentActiveCategory) {
-    baseList = MENU_DATA.filter(item => item.category === currentActiveCategory);
-  }
-
-  const filtered = baseList.filter(item => {
-    const nameMatch = item.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(cleanQuery);
-    const descMatch = item.description.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(cleanQuery);
-    const numMatch = item.id.toString() === cleanQuery;
-    const catNameMatch = CATEGORY_NAMES[item.category].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(cleanQuery);
-    
-    return nameMatch || descMatch || numMatch || catNameMatch;
-  });
-
-  renderItems(filtered, `No se encontraron platos que coincidan con "${query}".`);
-}
-
-// Toast de notificación rápido
-function showToast(message) {
-  let toast = document.getElementById("toast");
-  if (!toast) {
-    toast = document.createElement("div");
-    toast.id = "toast";
-    document.body.appendChild(toast);
-  }
-  toast.innerText = message;
-  toast.className = "show";
-  setTimeout(() => {
-    toast.className = toast.className.replace("show", "");
-  }, 2000);
 }
 
 // Revisa si hay parámetros de sección en la URL al cargar

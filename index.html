@@ -22,10 +22,18 @@
       <!-- Cabecera Heroica -->
       <header class="welcome-hero">
         <div class="welcome-logo-container">
-          <h1 class="welcome-logo" id="main-brand-title">AB Andaluz</h1>
+          <img src="logo.png" alt="AB Andaluz Logo" class="welcome-logo-img">
+          <h1 class="welcome-logo-text" id="main-brand-title">AB Andaluz</h1>
           <div class="welcome-subtitle">Carta Digital</div>
         </div>
         <p class="welcome-tagline">Disfruta de la mejor fusión de sabores tradicionales y especialidades al grill.</p>
+        
+        <!-- Botones de Acción en Inicio -->
+        <div class="welcome-actions">
+          <button class="btn-action ripple" id="btn-welcome-info" aria-label="Ver información y contacto">
+            <i class="fa-solid fa-circle-info"></i> Contacto y Horarios
+          </button>
+        </div>
       </header>
 
       <!-- Grid de Categorías -->
@@ -57,14 +65,6 @@
 
           <div style="width: 40px;"></div> <!-- Compensador para centrado -->
         </div>
-
-        <!-- Buscador Inteligente -->
-        <div class="search-bar-container" id="search-bar-container">
-          <input type="text" class="search-input" id="search-input" placeholder="Buscar plato, número o ingrediente...">
-          <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-        </div>
       </header>
 
       <!-- Tabs de Navegación Rápida Superior (Deslizable) -->
@@ -77,39 +77,6 @@
         <!-- Renderizado dinámico desde JS -->
       </main>
     </section>
-
-    <!-- ======================================================= -->
-    <!-- BARRA DE NAVEGACIÓN INFERIOR (PERSISTENTE)             -->
-    <!-- ======================================================= -->
-    <nav class="bottom-nav" aria-label="Navegación principal de la aplicación">
-      <button class="nav-item active" id="tab-home" aria-label="Página de inicio">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-        </svg>
-        <span>Inicio</span>
-      </button>
-
-      <button class="nav-item" id="tab-search" aria-label="Buscar plato">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>
-        <span>Buscar</span>
-      </button>
-
-      <button class="nav-item" id="tab-favorites" aria-label="Platos favoritos guardados">
-        <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <span>Favoritos</span>
-      </button>
-
-      <button class="nav-item" id="tab-info" aria-label="Información y contacto del restaurante">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <span>Contacto</span>
-      </button>
-    </nav>
 
     <!-- ======================================================= -->
     <!-- MODAL DE INFORMACIÓN Y CONTACTO                         -->
@@ -142,8 +109,8 @@
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
             Dirección
           </h5>
-          <p>Calle Falsa 123, Sevilla, España</p>
-          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-contact">
+          <p>Calle Encinar nº 9, Aguadulce, Almería</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Calle+Encinar+9,+Aguadulce" target="_blank" rel="noopener noreferrer" class="btn-contact">
             <i class="fa-solid fa-map-location-dot"></i> Cómo llegar en Google Maps
           </a>
         </div>
@@ -151,11 +118,14 @@
         <div class="info-section">
           <h5>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 00.996.86h.998a1 1 0 00.996-.86l.548-2.2a1 1 0 01.94-.725H19a2 2 0 012 2v1.5a10 10 0 01-10 10H5a2 2 0 01-2-2V5z"></path></svg>
-            Pedidos y Reservas
+            Contacto y Pedidos
           </h5>
-          <p>Llámanos directamente para realizar tu pedido o reservar mesa.</p>
-          <a href="tel:+34954000000" class="btn-contact">
-            <i class="fa-solid fa-phone"></i> Llamar al 954 00 00 00
+          <p>Escríbenos por WhatsApp o llámanos directamente.</p>
+          <a href="https://wa.me/34641656540" target="_blank" rel="noopener noreferrer" class="btn-contact btn-whatsapp" style="background-color: #25d366; border-color: #25d366;">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp: 641 65 65 40
+          </a>
+          <a href="tel:+34641656540" class="btn-contact">
+            <i class="fa-solid fa-phone"></i> Llamar: 641 65 65 40
           </a>
         </div>
       </div>
